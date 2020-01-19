@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BookHive.Models.book>
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+
+<h2>Browse All Books Here</h2>
+@foreach (var i in Model)
+{
+    
+    <div class="row singleBook">
+        <div class="col-md-3">
+            <a href="#" class="thumbnail images">
+                <img src="@i.GetImageUrl()" class="images" /></a>
+        </div>
+
+        <div class="col-md-9">
+        
+            <p class="h4 text-primary">@i.BookName</p>
+            <p class="text-info">
+                Price: Rs. @i.Price
+            </p>
+            <p class="text-info">Author: @i.AuthorName</p>
+            <p class="text-info"><a href="/home/BookDetails/@i.BookId">Click here</a> for more details......</p>
+
+            @if (!User.IsInRole("Admin"))
+            {
+                <a href="/home/BookDetails/@i.BookId">
+                    <button type="button" class="btn btn-primary">Buy Now</button></a>
+            }
+            @if (Request.IsAuthenticated && !User.IsInRole("Admin"))
+            {
+                <a href="/home/AddToSession/@i.BookId" class="AddToSession" >
+                    <button type="button" class="btn btn-primary">Add to Cart</button></a>
+            }
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="/home/Delete/@i.BookId" class="btn btn-primary">Delete Book</a>
+                <a href="/home/Update/@i.BookId">Update Book</a>
+            }
+        
+        </div>
+
+    </div>
+
+            
+}
+

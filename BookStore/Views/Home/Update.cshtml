@@ -1,0 +1,68 @@
+﻿@model BookHive.Models.book
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1 class="bookprice">Update</h1>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        
+        @Html.HiddenFor(model => model.BookId)
+
+        <div class="editor-label">
+            Book name
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BookName)
+            @Html.ValidationMessageFor(model => model.BookName)
+        </div>
+
+        <div class="editor-label">
+            Author name
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorName)
+            @Html.ValidationMessageFor(model => model.AuthorName)
+        </div>
+
+        <div class="editor-label">
+            Price
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            Categories
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Categories)
+            @Html.ValidationMessageFor(model => model.Categories)
+        </div>
+        <div class="editor-label">
+            Available
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Available)
+            @Html.ValidationMessageFor(model => model.Available)
+        </div>
+        <p>
+            <input type="submit" value="Save" class="BuyNow" />
+        </p>
+    
+}
+

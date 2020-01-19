@@ -1,0 +1,202 @@
+﻿#leftside
+{
+/*background-color:#e67300;*/
+border-right:double;
+float:left;
+height:auto;
+width:250px;
+font-size:17px;
+margin-top:-2px;
+text-align:center;
+font-family :'Segoe UI' ;
+ text-decoration:none;
+}
+a:link {
+ text-decoration:none;
+}
+
+.Header
+{
+
+background-color:#e67300;
+/*background-image: url("/Images/images.jpg");*/
+width:100%;
+
+font-size:22px;
+padding-top:0px;
+font-family:'Segoe UI' ;
+ text-decoration:none;
+ margin-left:-2px;
+
+}
+.editor-label 
+{
+font-family:'Segoe UI';
+}
+
+#Links
+{
+    margin :0px auto ;
+    padding:5px;
+    display :block;   
+    width :750px;
+    text-align :center ;
+}
+
+.FontColor {
+color:#5900a9;
+}
+.Categories {
+font-weight:bold;
+}
+#Title
+{
+/*background-color:#0047b3;*/
+background-image: url("/Images/images.jpg");
+background-size:auto;
+/*background-repeat:repeat-y;*/
+height:100px;
+margin-bottom:0px;
+margin-top:0px;  
+text-align:center;
+width:100%;
+}
+
+body
+{
+/*background-color: #EFD08D;*/
+background-color:#e9be63;
+
+/*background-image:url("/Images/images (3).jpg");*/
+background-repeat:repeat-y;
+background-size: 100%;
+margin-top:-2px;
+margin-left:0px;
+margin-right:0px;
+}
+
+th 
+{
+    text-align: left;
+}
+.details
+{
+padding-top:20px;
+}
+#container
+{
+margin-top:30px;
+margin-left:300px;
+width:60%;
+height:200px;
+}
+.bookblog
+{
+width:800px;
+height:150px;
+margin-bottom:20px;
+}
+/*.Images
+{
+float:left;
+width:150px; 
+height:150px;
+margin-right:15px;
+}*/
+.bookname
+{
+font-size:20px;
+font-family:Algerian;
+}
+.bookprice
+{
+font-size:15px;
+font-family:'Segoe UI'
+}
+/*.BuyNow
+{
+background-color:gray;
+height:22px;
+width:90px;
+font-family:'Segoe UI' ;
+color:white;
+border:none;
+}*/
+.AddToSession {
+background-color:gray;
+height:20px;
+width:90px;
+font-family:'Segoe UI' ;
+color:white;
+padding-bottom:1px;
+}
+/*a
+{
+padding-right:8px;
+}*/
+
+.thumbnail.BigImages {
+height:250px;
+width:250px;  
+float:left;
+}
+/*.thumbnail>.ImagesBig{
+    height:350px;
+    width:350px;
+}*/
+
+.BookBlogDetails {
+width:850px;
+}
+
+
+table {
+padding :2px;
+}
+.tableborder th {
+    border-bottom :1px solid black;
+}
+.tableborder tr.totalborder {
+border-top :1px solid black;
+
+}
+/*.thumbnail- {
+height:350px;
+width:350px;
+}*/
+
+body {
+}
+.CustomDiv {
+/*background-color:blue;*/
+margin:4px;
+padding:0px;
+}
+.header{
+    background-color:blue;
+}
+.thumbnail {
+height:166px;
+width:155px;
+}
+.images{
+
+width:150px;
+float:left;    
+}
+.singleBook{
+    width:750px;
+}
+
+.thumbnail>.images{
+    height:155px;
+}
+/*.container{
+    width:100%;
+    padding:0px;
+}
+.row{
+    margin-left:0px;
+    margin-right:0px;
+    width:100%;
+}*/

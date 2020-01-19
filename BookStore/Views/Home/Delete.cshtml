@@ -1,0 +1,18 @@
+﻿@model BookHive.Models.book
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1 class="bookprice">Delete</h1>
+
+<h1 class="bookprice">Are you sure you want to delete @Model.BookName ?</h1>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="hidden" name="BookId" value="@Model.BookId" />
+        <input type="submit" value="Delete" class="BuyNow"/> 
+    </p>
+}

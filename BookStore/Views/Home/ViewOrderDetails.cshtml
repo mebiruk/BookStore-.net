@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BookHive.Models.OrderDetails>
+
+@{
+    ViewBag.Title = "ViewOrderDetails";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1 class="bookprice">View Order Details</h1>
+
+<table  class="tableborder">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderId)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        
+    </tr>
+}
+
+</table>

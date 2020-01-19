@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BookHive.Models.book>
+
+@{
+    ViewBag.Title = "ActionAndAdventure";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>@ViewBag.CategoryName</h2>
+@foreach (var i in Model)
+{           
+    <div class="row singleBook">
+        <div class="col-md-3">
+            <a href="#" class="thumbnail images">
+                <img src="@i.GetImageUrl()" class="images" /></a>
+        </div>
+        <div class="col-md-9">
+            <p class="h4 text-primary">@i.BookName</p>
+            
+            @if (@i.IsDiscounted == true)
+            {
+                <p class="text-info">Price: Rs. @i.Price  Discounted Price is Rs. @i.DiscountedPrice</p>
+            }
+            else
+            {
+                <p class="text-info">Price: Rs.@i.Price</p>
+            }
+
+            <p class="text-info">Author: @i.AuthorName</p>
+
+
+            <p class="text-info"><a href="/home/BookDetails/@i.BookId">Click Here</a> for more details......</p>
+            @if (!User.IsInRole("Admin"))
+            {
+                <a href="/home/BookDetails/@i.BookId">
+                    <button type="button" class="btn btn-primary">Buy Now</button></a>
+            }
+            @if (Request.IsAuthenticated && !User.IsInRole("Admin"))
+            {
+                <a href="/home/AddToSession/@i.BookId" class="AddToSession" >
+                    <button type="button" class="btn btn-primary">Add to Cart</button></a>
+            }
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="/home/Delete/@i.BookId" class="btn btn-primary">Delete Book</a>
+                <a href="/home/Update/@i.BookId" class="btn btn-primary">Update Book</a>
+            }
+        </div>
+    </div>
+    
+            
+}

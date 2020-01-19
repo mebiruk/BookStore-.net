@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/CustomStyle.css" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".AddToSession").each(function () {
+                var href = $(this).attr("href");
+                $(this).attr("href", href + "?returnurl=" + window.location);
+            });
+        });
+    </script>
+</head>
+<body>
+    @*<p id="Title">
+        <img src="~/Images/logo.png" width="400" height="100" align="middle" />
+        @*<img src="~/Images/book.jpg" width="500" height="100" />
+    </p>*@
+
+
+    <div>
+       @Html.Partial("Header")
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div class="sidebarContent">
+                        <h2>Categories  </h2>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="/home/Index">All Books</a></li>
+                            <li class="list-group-item"><a href="/home/ActionAndAdventure" data-id="1">Action And Adventure</a></li>
+                            <li class="list-group-item"><a href="/home/LiteratureAndFiction" data-id="2">Literature And Fiction</a></li>
+                            <li class="list-group-item"><a href="/home/Biographies" data-id="3">Biographies</a></li>
+                            <li class="list-group-item"><a href="/home/InformationTechnology" data-id="4">Information Technology</a></li>
+                            <li class="list-group-item"><a href="/home/Childrens" data-id="5">Children's and Young Adults</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-9 ">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,2 +1,2 @@
-# BookStore-.net
-.net mvc bookstore using microsoft sql server
+# BookStore in asp.net using mvc and microsoft sql server
+

@@ -1,0 +1,84 @@
+﻿@model BookHive.Models.UserAccount
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Register</h2>
+    <div class="bookblob">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    
+   
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.UserName)
+        </div>
+        <div class="editor-feild">
+            @Html.EditorFor(model=>model.UserName)
+            @Html.ValidationMessageFor(model=>model.UserName)
+            
+        </div>
+
+        <div class="editor-label">
+           @Html.LabelFor(model=>model.EmailId)
+        </div>
+        <div class="editor-feild">
+            @Html.EditorFor(model=>model.EmailId)
+            @Html.ValidationMessageFor(model=>model.EmailId)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.Password)
+        </div>
+        <div class="editor-feild">
+            @Html.EditorFor(model=>model.Password)
+            @Html.ValidationMessageFor(model=>model.Password)
+        </div>
+    
+        <div class="editor-label">
+            <b>Confirm-Password</b>
+        </div>
+        <div class="editor-feild">
+            @Html.EditorFor(model=>model.RPassword)
+            @Html.ValidationMessageFor(model=>model.RPassword)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.Address)
+        </div>
+        <div class="editor-feild">
+            @Html.TextAreaFor(model=>model.Address)
+            @Html.ValidationMessageFor(model=>model.Address)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.City)
+        </div>
+        <div class="editor-feild">
+            @Html.EditorFor(model=>model.City)
+            @Html.ValidationMessageFor(model=>model.City)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.State)
+        </div>
+        <div class="editor-feild">
+         
+            @Html.DropDownListFor(model=>model.State, new SelectList(new [] {"Gujarat","Jammu & Kashmir","Kerala","Maharashtra","Punjab","Rajasthan","Tamil Nadu","Uttar Pradesh"}),"Choose State")
+             @Html.ValidationMessageFor(model=>model.State)
+        </div>
+    
+        <div class="editor-label">
+           @Html.LabelFor(model=>model.ContactNo)
+        </div>
+        <div class="editor-feild">
+            @Html.EditorFor(model=>model.ContactNo)
+            @Html.ValidationMessageFor(model=>model.ContactNo)
+        </div>
+    <p>     </p>
+       
+    <button type="Submit" value="Submit" class="btn btn-primary">Register</button>
+    
+}
+</div>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DiscountDetails>
+  <Discount>
+    <GenreName>Biographies</GenreName>
+    <StartDate>06-01-2016</StartDate>
+    <EndDate>06-03-2016</EndDate>
+    <DiscountPercentage>10</DiscountPercentage>
+  </Discount>
+</DiscountDetails>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BookHive.Models.book>
+
+@{
+    ViewBag.Title = "ViewCart";
+    float Total = 0;
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h1 class="bookprice">View Cart</h1>
+@if (Session["UserCart"] != null && (Session["UserCart"] as List<int>).Count>0)
+{
+    <table class="table tableborder">
+    <tr>
+        <th class="bookprice">
+            Book name
+        </th>
+        
+        <th class="bookprice">
+            Price
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="bookprice">
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.DiscountedPrice)
+        </td>
+
+        <td>
+            <a href="/Home/RemoveFromCart/@item.BookId">
+                    <button type="button" class="btn btn-primary">Remove From Cart</button></a>
+            
+        </td>
+        
+    </tr>
+    
+    Total += item.DiscountedPrice;
+    }
+    
+    <tr class:"totalborder">
+        <td class="bookprice">Total</td>
+        <td class="bookprice">@Total</td>
+    </tr>
+     
+
+</table>
+@*<h3> Total amount you have to pay is @Total</h3>*@
+<form action="/Home/PlaceOrder"> 
+    <a href="/home/PlaceOrder"><button class="btn btn-primary">Place Order</button></a>
+</form>
+    
+}
+else{
+    <h3 class="bookprice">Your cart is empty</h3> 
+}
